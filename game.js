@@ -1,5 +1,4 @@
 var canvas = document.getElementById("canvas");
-var gameContainer = document.getElementById("game-container");
 
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
