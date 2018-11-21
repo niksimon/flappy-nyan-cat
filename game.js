@@ -5,7 +5,7 @@ canvas.height = canvas.clientHeight;
 
 if(canvas.getContext) {
 
-    var	context = canvas.getContext("2d");
+    var context = canvas.getContext("2d");
 
     var game = {
         width: canvas.width,
