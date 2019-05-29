@@ -42,16 +42,15 @@ if(canvas.getContext) {
         y: game.height - 45,
         width: 32,
         height: 32,
-        playing: 1, // 1 on, -1 off
-        img: game.images[6],
+        playing: 0, // 1 on, 0 off
+        img: game.images[7],
         mainAudio: new Audio("sound/main.mp3"),
         jumpAudio: new Audio("sound/jump.wav"),
         deadAudio: new Audio("sound/dead.wav"),
         start: function() {
             document.addEventListener("click", this.change);
-            this.mainAudio.play();
-            this.mainAudio.volume = 0.2;
-            this.jumpAudio.volume = this.deadAudio.volume = 0.1;
+            this.mainAudio.volume = 0;
+            this.jumpAudio.volume = this.deadAudio.volume = 0;
             this.mainAudio.loop = true;
         },
         draw: function() {
@@ -61,9 +60,10 @@ if(canvas.getContext) {
             if(collisionPointObj(event.pageX - canvas.offsetLeft - 10, event.pageY - canvas.offsetTop - 10, audioSwitch)) {
                 audioSwitch.playing = audioSwitch.playing ? 0 : 1;
                 audioSwitch.img = game.images[7 - audioSwitch.playing];
-                audioSwitch.mainAudio.volume = audioSwitch.mainAudio.volume ? 0 : 0.2;
+                audioSwitch.mainAudio.volume = audioSwitch.mainAudio.volume ? 0 : 0.1;
                 audioSwitch.jumpAudio.volume = audioSwitch.jumpAudio.volume ? 0 : 0.1;
                 audioSwitch.deadAudio.volume = audioSwitch.deadAudio.volume ? 0 : 0.1;
+                audioSwitch.mainAudio.play();
             }
         },
         playJumpSound: function() {
