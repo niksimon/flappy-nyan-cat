@@ -469,7 +469,7 @@ if(canvas.getContext) {
     }
 
     function update() {
-        requestAnimationFrame(update);
+        //requestAnimationFrame(update);
 
         context.clearRect(0, 0, game.width, game.height);
         
@@ -523,5 +523,5 @@ if(canvas.getContext) {
     }
 
     cat.init();
-    update();
+    setInterval(update, 8);
 }
