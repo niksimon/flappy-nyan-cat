@@ -1,3 +1,3 @@
 # HTML5 Flappy Nyan Cat Game
 
-Play it here: https://flappy-nyan-cat.niksimon.com/
+Play it here: https://niksimon.github.io/flappy-nyan-cat/
